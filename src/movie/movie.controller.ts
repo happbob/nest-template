@@ -1,13 +1,21 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { timingSafeEqual } from 'crypto';
+import { Logger } from 'nestjs-pino';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { Movie } from './entities/movie.entitiy';
 import {MovieService} from './movie.service';
+
+
 @Controller('movie')
 export class MovieController {
-    constructor(private readonly movieService: MovieService){}
+    constructor(
+        private readonly movieService: MovieService
+    ){}
     @Get()
     getAll():Movie[]{
+        throw new Error('movie error');
+        
         return this.movieService.getAll();
     };
     @Get(`search`)
@@ -35,6 +43,4 @@ export class MovieController {
     path(@Param('id') movieId:number,@Body() updateData:UpdateMovieDto){
         return this.movieService.update(movieId,updateData);
     }
-
-    
-}
+};

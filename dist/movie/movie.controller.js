@@ -23,6 +23,7 @@ let MovieController = class MovieController {
         this.movieService = movieService;
     }
     getAll() {
+        throw new Error('movie error');
         return this.movieService.getAll();
     }
     ;
@@ -89,4 +90,5 @@ MovieController = __decorate([
     __metadata("design:paramtypes", [movie_service_1.MovieService])
 ], MovieController);
 exports.MovieController = MovieController;
+;
 //# sourceMappingURL=movie.controller.js.map
