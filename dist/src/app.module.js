@@ -6,24 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MovieModule = void 0;
+exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const movie_controller_1 = require("./movie.controller");
-const movie_service_1 = require("./movie.service");
-const nest_raven_1 = require("nest-raven");
-const core_1 = require("@nestjs/core");
-let MovieModule = class MovieModule {
+const movie_module_1 = require("./movie/movie.module");
+const app_controller_1 = require("./app.controller");
+let AppModule = class AppModule {
 };
-MovieModule = __decorate([
+AppModule = __decorate([
     common_1.Module({
-        controllers: [movie_controller_1.MovieController],
-        providers: [movie_service_1.MovieService,
-            {
-                provide: core_1.APP_INTERCEPTOR,
-                useValue: new nest_raven_1.RavenInterceptor()
-            }
-        ]
+        imports: [
+            movie_module_1.MovieModule
+        ],
+        controllers: [app_controller_1.AppController],
+        providers: [],
     })
-], MovieModule);
-exports.MovieModule = MovieModule;
-//# sourceMappingURL=movie.module.js.map
+], AppModule);
+exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map

@@ -1,5 +1,5 @@
 import { ValidationPipe } from '@nestjs/common';
-import {init as SentryInit} from '@sentry/node';
+import * as Sentry from '@sentry/node';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
@@ -8,9 +8,9 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
-    new FastifyAdapter()
+    new FastifyAdapter({logger:true})
     );
-  SentryInit({
+  Sentry.init({
     dsn:'https://edad56d57fd645b595e00168e6febca1@o504759.ingest.sentry.io/5592048',
   });
   app.useGlobalPipes(new ValidationPipe({

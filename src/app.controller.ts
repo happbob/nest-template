@@ -1,9 +1,11 @@
-import { Controller, Get } from '@nestjs/common';
-
+import { Controller, Get, Req, Res,UseInterceptors } from '@nestjs/common';
+import { SentryInterceptor } from '../config/sentry.interceptor';
+@UseInterceptors(SentryInterceptor)
 @Controller('')
 export class AppController {
     @Get()
     home(){
+        
         return 'Welcome!!';
     }
 

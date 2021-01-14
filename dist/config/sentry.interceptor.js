@@ -6,24 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MovieModule = void 0;
+exports.SentryInterceptor = void 0;
 const common_1 = require("@nestjs/common");
-const movie_controller_1 = require("./movie.controller");
-const movie_service_1 = require("./movie.service");
-const nest_raven_1 = require("nest-raven");
-const core_1 = require("@nestjs/core");
-let MovieModule = class MovieModule {
+const operators_1 = require("rxjs/operators");
+const Sentry = require("@sentry/minimal");
+let SentryInterceptor = class SentryInterceptor {
+    intercept(context, next) {
+        return next
+            .handle()
+            .pipe(operators_1.tap(null, (exception) => {
+            Sentry.captureException(exception);
+        }));
+    }
 };
-MovieModule = __decorate([
-    common_1.Module({
-        controllers: [movie_controller_1.MovieController],
-        providers: [movie_service_1.MovieService,
-            {
-                provide: core_1.APP_INTERCEPTOR,
-                useValue: new nest_raven_1.RavenInterceptor()
-            }
-        ]
-    })
-], MovieModule);
-exports.MovieModule = MovieModule;
-//# sourceMappingURL=movie.module.js.map
+SentryInterceptor = __decorate([
+    common_1.Injectable()
+], SentryInterceptor);
+exports.SentryInterceptor = SentryInterceptor;
+//# sourceMappingURL=sentry.interceptor.js.map

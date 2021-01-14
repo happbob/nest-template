@@ -1,3 +1,4 @@
+import { HttpException, HttpStatus } from '@nestjs/common';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import {Movie} from './entities/movie.entitiy'
 @Injectable()
@@ -13,7 +14,10 @@ export class MovieService {
     getOne(id:number):Movie{
         const movie = this.movies.find(movie => movie.id === +id);
         if(!movie){
-            throw new NotFoundException(`Movie with ID ${id}`);
+            throw new HttpException({
+                status: HttpStatus.FORBIDDEN,
+                error: 'This is a custom message',
+              }, HttpStatus.FORBIDDEN);
         }else return movie;
     }
 

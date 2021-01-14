@@ -18,7 +18,7 @@ const create_movie_dto_1 = require("./dto/create-movie.dto");
 const update_movie_dto_1 = require("./dto/update-movie.dto");
 const movie_entitiy_1 = require("./entities/movie.entitiy");
 const movie_service_1 = require("./movie.service");
-const sentry_interceptor_1 = require("../config/sentry.interceptor");
+const sentry_interceptor_1 = require("../../config/sentry.interceptor");
 let MovieController = class MovieController {
     constructor(movieService) {
         this.movieService = movieService;
