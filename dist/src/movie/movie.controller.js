@@ -16,7 +16,7 @@ exports.MovieController = void 0;
 const common_1 = require("@nestjs/common");
 const create_movie_dto_1 = require("./dto/create-movie.dto");
 const update_movie_dto_1 = require("./dto/update-movie.dto");
-const movie_entitiy_1 = require("./entities/movie.entitiy");
+const movie_entities_1 = require("./entities/movie.entities");
 const movie_service_1 = require("./movie.service");
 const sentry_interceptor_1 = require("../../config/sentry.interceptor");
 let MovieController = class MovieController {
@@ -65,7 +65,7 @@ __decorate([
     __param(0, common_1.Param(`id`)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", movie_entitiy_1.Movie)
+    __metadata("design:returntype", movie_entities_1.Movie)
 ], MovieController.prototype, "getOne", null);
 __decorate([
     common_1.Post(),

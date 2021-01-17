@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {Movie} from './entities/movie.entitiy'
+import {Movie} from './entities/movie.entities'
 @Injectable()
 export class MovieService {
     //database 로직 짜는 곳
