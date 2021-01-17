@@ -12,7 +12,8 @@ export class MovieService {
     }
 
     getOne(id:number):Movie{
-        const movie = this.movies.find(movie => movie.id === +id);
+        console.log(typeof id);
+        const movie = this.movies.find(movie => movie.id === id);
         if(!movie){
             throw new HttpException({
                 status: HttpStatus.FORBIDDEN,
