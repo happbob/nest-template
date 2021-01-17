@@ -5,7 +5,7 @@ import { MovieService } from './movie.service';
 export declare class MovieController {
     private readonly movieService;
     constructor(movieService: MovieService);
-    getAll(): Movie[];
+    getAll(res: any): Movie[];
     search(searchingYear: string): string;
     getOne(id: number): Movie;
     create(movieData: CreateMovieDto): void;

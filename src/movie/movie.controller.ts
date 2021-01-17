@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query,UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query,UseInterceptors,Res} from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { Movie } from './entities/movie.entitiy';
@@ -12,9 +12,8 @@ export class MovieController {
         private readonly movieService: MovieService
     ){}
     @Get()
-    getAll():Movie[]{        
-        let num:number;
-
+    getAll(@Res() res):Movie[]{ 
+        if(this.movieService.getAll().length===0) return res.status(300).send({code:300,isSuccess:false,message:"200"});
         return this.movieService.getAll();
 
     };

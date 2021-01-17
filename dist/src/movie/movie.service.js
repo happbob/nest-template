@@ -17,7 +17,8 @@ let MovieService = class MovieService {
         return this.movies;
     }
     getOne(id) {
-        const movie = this.movies.find(movie => movie.id === +id);
+        console.log(typeof id);
+        const movie = this.movies.find(movie => movie.id === id);
         if (!movie) {
             throw new common_1.HttpException({
                 status: common_1.HttpStatus.FORBIDDEN,

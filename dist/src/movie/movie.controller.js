@@ -23,8 +23,9 @@ let MovieController = class MovieController {
     constructor(movieService) {
         this.movieService = movieService;
     }
-    getAll() {
-        let num;
+    getAll(res) {
+        if (this.movieService.getAll().length === 0)
+            return res.status(300).send({ code: 300, isSuccess: false, message: "200" });
         return this.movieService.getAll();
     }
     ;
@@ -47,8 +48,9 @@ let MovieController = class MovieController {
 };
 __decorate([
     common_1.Get(),
+    __param(0, common_1.Res()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Array)
 ], MovieController.prototype, "getAll", null);
 __decorate([
