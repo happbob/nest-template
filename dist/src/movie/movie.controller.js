@@ -19,6 +19,7 @@ const update_movie_dto_1 = require("./dto/update-movie.dto");
 const movie_entities_1 = require("./entities/movie.entities");
 const movie_service_1 = require("./movie.service");
 const sentry_interceptor_1 = require("../../config/sentry.interceptor");
+const swagger_1 = require("@nestjs/swagger");
 let MovieController = class MovieController {
     constructor(movieService) {
         this.movieService = movieService;
@@ -30,7 +31,7 @@ let MovieController = class MovieController {
     }
     ;
     search(searchingYear) {
-        return `We are searching for a movie with a title : `;
+        return `We are searching for a movie with a title : ${+searchingYear} `;
     }
     getOne(id) {
         console.log(typeof id);
@@ -55,6 +56,10 @@ __decorate([
 ], MovieController.prototype, "getAll", null);
 __decorate([
     common_1.Get(`search`),
+    swagger_1.ApiOperation({ summary: '영화 찾기 API' }),
+    swagger_1.ApiResponse({ status: 201, description: `success!` }),
+    swagger_1.ApiOkResponse({ description: 'movie was successfully located' }),
+    swagger_1.ApiNotFoundResponse({ description: 'A movie of the requested ID could not be found' }),
     __param(0, common_1.Query("year")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),

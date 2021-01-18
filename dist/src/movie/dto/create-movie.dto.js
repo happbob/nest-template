@@ -10,20 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateMovieDto = void 0;
+const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 class CreateMovieDto {
 }
 __decorate([
     class_validator_1.IsString(),
+    swagger_1.ApiProperty(),
     __metadata("design:type", String)
 ], CreateMovieDto.prototype, "title", void 0);
 __decorate([
     class_validator_1.IsNumber(),
+    swagger_1.ApiProperty(),
     __metadata("design:type", Number)
 ], CreateMovieDto.prototype, "year", void 0);
 __decorate([
     class_validator_1.IsOptional(),
     class_validator_1.IsString({ each: true }),
+    swagger_1.ApiProperty(),
     __metadata("design:type", Array)
 ], CreateMovieDto.prototype, "genres", void 0);
 exports.CreateMovieDto = CreateMovieDto;

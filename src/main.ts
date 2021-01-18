@@ -3,6 +3,7 @@ import * as Sentry from '@sentry/node';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { MovieModule } from './movie/movie.module';
 
 
 async function bootstrap() {
@@ -13,7 +14,11 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('cats')
     .build();
-  const document = SwaggerModule.createDocument(app, config);
+  const options = {
+    include:[AppModule,MovieModule],
+    deepScanRoutes:true
+  }
+  const document = SwaggerModule.createDocument(app, config, options);
   SwaggerModule.setup('swagger', app, document);
   Sentry.init({
     dsn:'https://edad56d57fd645b595e00168e6febca1@o504759.ingest.sentry.io/5592048',
