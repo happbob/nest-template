@@ -2711,49 +2711,9 @@
         "signature": "81ad61d185688af30762679ba2f18d877d3a208ec720467e97fb01afca965f5f",
         "affectsGlobalScope": false
       },
-      "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts": {
-        "version": "2bad09c4dc0810666ef5b6150aa910dd711051ce5f2184050c9859c708092a36",
-        "signature": "2bad09c4dc0810666ef5b6150aa910dd711051ce5f2184050c9859c708092a36",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/mapped-types/dist/intersection-type.helper.d.ts": {
-        "version": "f9466e9b33fddf349c95d02835d174b946f1e81d61b72100d91ce5ff2f9abe3b",
-        "signature": "f9466e9b33fddf349c95d02835d174b946f1e81d61b72100d91ce5ff2f9abe3b",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/mapped-types/dist/omit-type.helper.d.ts": {
-        "version": "c938dac97b83703e7bd03862b5bc558425acc9f16ad9e24220771df184d25fcf",
-        "signature": "c938dac97b83703e7bd03862b5bc558425acc9f16ad9e24220771df184d25fcf",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/mapped-types/dist/partial-type.helper.d.ts": {
-        "version": "8941525aa2f1e097f0352e586bb9c755e2d533e9945508b7518346759b26e1b8",
-        "signature": "8941525aa2f1e097f0352e586bb9c755e2d533e9945508b7518346759b26e1b8",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/mapped-types/dist/pick-type.helper.d.ts": {
-        "version": "8acfefd1aec7626a3016ce7e82e3ac1a0e5b57248cffd8255b833503c29954c7",
-        "signature": "8acfefd1aec7626a3016ce7e82e3ac1a0e5b57248cffd8255b833503c29954c7",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/mapped-types/dist/type-helpers.utils.d.ts": {
-        "version": "3cf73a203d499608e5b91d0c8f6ec729a39dd547cc2651a0d4647cdb420cc1fc",
-        "signature": "3cf73a203d499608e5b91d0c8f6ec729a39dd547cc2651a0d4647cdb420cc1fc",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/mapped-types/dist/index.d.ts": {
-        "version": "17f1d99666811b576261c5c9399cf2a643220188d6dcd0e6fe605a68a696d2c8",
-        "signature": "17f1d99666811b576261c5c9399cf2a643220188d6dcd0e6fe605a68a696d2c8",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@nestjs/mapped-types/index.d.ts": {
-        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
-        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
-        "affectsGlobalScope": false
-      },
       "../src/movie/dto/update-movie.dto.ts": {
-        "version": "dcd7f5578e92d9d97a329bbeec3c1468797760d8ac4a8e416006e39e4b728460",
-        "signature": "11454c72cf5981f9a0bc21bd3a38ee84893a40f653381dc06afc2975f1112660",
+        "version": "95ccae79335cf3000e7b042b10d1cc8e5dd58cd1061a264fce8b80126fbf031e",
+        "signature": "3f7c772e3c892dd6aa39f1b7ae15baef11f89cbb0863c019eb89caa39ed87cf4",
         "affectsGlobalScope": false
       },
       "../src/movie/entities/movie.entities.ts": {
@@ -4412,39 +4372,6 @@
       ],
       "../node_modules/@nestjs/core/services/reflector.service.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/index.d.ts": [
-        "../node_modules/@nestjs/mapped-types/dist/intersection-type.helper.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/omit-type.helper.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/partial-type.helper.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/pick-type.helper.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/type-helpers.utils.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/intersection-type.helper.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/omit-type.helper.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/partial-type.helper.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/pick-type.helper.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/type-helpers.utils.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/index.d.ts": [
-        "../node_modules/@nestjs/mapped-types/dist/index.d.ts"
       ],
       "../node_modules/@nestjs/swagger/dist/decorators/api-body.decorator.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -6511,7 +6438,7 @@
         "../node_modules/class-validator/types/index.d.ts"
       ],
       "../src/movie/dto/update-movie.dto.ts": [
-        "../node_modules/@nestjs/mapped-types/index.d.ts",
+        "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/movie/dto/create-movie.dto.ts"
       ],
       "../src/movie/movie.controller.ts": [
@@ -7162,39 +7089,6 @@
       ],
       "../node_modules/@nestjs/core/services/reflector.service.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/index.d.ts": [
-        "../node_modules/@nestjs/mapped-types/dist/intersection-type.helper.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/omit-type.helper.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/partial-type.helper.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/pick-type.helper.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/type-helpers.utils.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/intersection-type.helper.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/omit-type.helper.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/partial-type.helper.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/pick-type.helper.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/dist/type-helpers.utils.d.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
-      "../node_modules/@nestjs/mapped-types/index.d.ts": [
-        "../node_modules/@nestjs/mapped-types/dist/index.d.ts"
       ],
       "../node_modules/@nestjs/swagger/dist/decorators/api-body.decorator.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -9240,6 +9134,7 @@
         "../node_modules/rxjs/internal/operators/zipall.d.ts"
       ],
       "../src/movie/dto/update-movie.dto.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../src/movie/dto/create-movie.dto.ts"
       ],
       "../src/movie/movie.controller.ts": [
@@ -9429,14 +9324,6 @@
       "../node_modules/@nestjs/core/router/request/request-constants.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
-      "../node_modules/@nestjs/mapped-types/dist/index.d.ts",
-      "../node_modules/@nestjs/mapped-types/dist/intersection-type.helper.d.ts",
-      "../node_modules/@nestjs/mapped-types/dist/mapped-type.interface.d.ts",
-      "../node_modules/@nestjs/mapped-types/dist/omit-type.helper.d.ts",
-      "../node_modules/@nestjs/mapped-types/dist/partial-type.helper.d.ts",
-      "../node_modules/@nestjs/mapped-types/dist/pick-type.helper.d.ts",
-      "../node_modules/@nestjs/mapped-types/dist/type-helpers.utils.d.ts",
-      "../node_modules/@nestjs/mapped-types/index.d.ts",
       "../node_modules/@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts",
       "../node_modules/@nestjs/swagger/dist/decorators/api-bearer.decorator.d.ts",
       "../node_modules/@nestjs/swagger/dist/decorators/api-body.decorator.d.ts",
