@@ -161,6 +161,11 @@
         "signature": "d2f31f19e1ba6ed59be9259d660a239d9a3fcbbc8e038c6b2009bde34b175fed",
         "affectsGlobalScope": false
       },
+      "../config/error.ts": {
+        "version": "1e0da63a5b0448de9f6480e691bf53b15fc7e316fae6d2a6c71d3feb0b4755df",
+        "signature": "4adce4654db3f6b7918abe7d3889245a4d34c0d7ff5d392efbcaf85f933966c6",
+        "affectsGlobalScope": true
+      },
       "../node_modules/reflect-metadata/index.d.ts": {
         "version": "8d6d51a5118d000ed3bfe6e1dd1335bebfff3fef23cd2af2f84a24d30f90cc90",
         "signature": "8d6d51a5118d000ed3bfe6e1dd1335bebfff3fef23cd2af2f84a24d30f90cc90",
@@ -2717,7 +2722,7 @@
         "affectsGlobalScope": false
       },
       "../src/movie/entities/movie.entities.ts": {
-        "version": "f9511169547c08ab9410575796cb98696f28f63e855a8a931901aae29ae00c49",
+        "version": "b9a59e2cae1a1126f99d0a59319d041445cfbcaaa4d5294d57a91cb9fc2804a9",
         "signature": "dbfbec719e8efb72c66465606b82a661350572e7a75c3fc65386e804d1f57536",
         "affectsGlobalScope": false
       },
@@ -2727,7 +2732,7 @@
         "affectsGlobalScope": false
       },
       "../src/movie/movie.controller.ts": {
-        "version": "1a67dca5adc78d00e031286251f2c2a53aace608ebdc73242ec81d69cc4f8759",
+        "version": "940f1d158b970c182f4009846f510acfff7cb63ce6854992609fbe47aa776cfb",
         "signature": "f244c8a0c07539b780c21fae90dfd44a7a9bae4467e1a3843c8f68904076fd57",
         "affectsGlobalScope": false
       },
@@ -6441,6 +6446,9 @@
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/movie/dto/create-movie.dto.ts"
       ],
+      "../src/movie/entities/movie.entities.ts": [
+        "../node_modules/@nestjs/swagger/index.d.ts"
+      ],
       "../src/movie/movie.controller.ts": [
         "../config/sentry.interceptor.ts",
         "../node_modules/@nestjs/common/index.d.ts",
@@ -9148,6 +9156,7 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
+      "../config/error.ts",
       "../config/sentry.interceptor.ts",
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",

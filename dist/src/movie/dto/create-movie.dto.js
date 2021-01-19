@@ -10,9 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateMovieDto = void 0;
+const openapi = require("@nestjs/swagger");
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 class CreateMovieDto {
+    static _OPENAPI_METADATA_FACTORY() {
+        return { title: { required: true, type: () => String }, year: { required: true, type: () => Number }, genres: { required: true, type: () => [String] } };
+    }
 }
 __decorate([
     class_validator_1.IsString(),

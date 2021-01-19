@@ -1,1 +1,1 @@
-{"version":3,"file":"update-movie.dto.js","sourceRoot":"","sources":["../../../src/movie/dto/update-movie.dto.ts"],"names":[],"mappings":";;;AAAA,uDAAiD;AACjD,yDAAkD;AAClD,MAAa,cAAe,SAAQ,0BAAW,CAAC,iCAAc,CAAC;CAE9D;AAFD,wCAEC"}
+{"version":3,"file":"update-movie.dto.js","sourceRoot":"","sources":["../../../src/movie/dto/update-movie.dto.ts"],"names":[],"mappings":";;;;AAAA,6CAA4C;AAC5C,yDAAkD;AAClD,MAAa,cAAe,SAAQ,qBAAW,CAAC,iCAAc,CAAC;;;;CAE9D;AAFD,wCAEC"}

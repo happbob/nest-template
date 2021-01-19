@@ -1,4 +1,4 @@
-import { Movie } from './entities/movie.entitiy';
+import { Movie } from './entities/movie.entities';
 export declare class MovieService {
     private movies;
     getAll(): Movie[];

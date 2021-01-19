@@ -13,6 +13,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MovieController = void 0;
+const openapi = require("@nestjs/swagger");
 const common_1 = require("@nestjs/common");
 const create_movie_dto_1 = require("./dto/create-movie.dto");
 const update_movie_dto_1 = require("./dto/update-movie.dto");
@@ -26,7 +27,7 @@ let MovieController = class MovieController {
     }
     getAll(res) {
         if (this.movieService.getAll().length === 0)
-            return res.status(300).send({ code: 300, isSuccess: false, message: "200" });
+            return res.status(400).send({ code: 400, isSuccess: false, message: "no.." });
         return this.movieService.getAll();
     }
     ;
@@ -49,6 +50,7 @@ let MovieController = class MovieController {
 };
 __decorate([
     common_1.Get(),
+    openapi.ApiResponse({ status: 200, type: [require("./entities/movie.entities").Movie] }),
     __param(0, common_1.Res()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
@@ -56,10 +58,11 @@ __decorate([
 ], MovieController.prototype, "getAll", null);
 __decorate([
     common_1.Get(`search`),
-    swagger_1.ApiOperation({ summary: '영화 찾기 API' }),
+    swagger_1.ApiOperation({ summary: '영화 찾기 API', description: 'comment' }),
     swagger_1.ApiResponse({ status: 201, description: `success!` }),
     swagger_1.ApiOkResponse({ description: 'movie was successfully located' }),
     swagger_1.ApiNotFoundResponse({ description: 'A movie of the requested ID could not be found' }),
+    openapi.ApiResponse({ status: 200, type: String }),
     __param(0, common_1.Query("year")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
@@ -67,6 +70,7 @@ __decorate([
 ], MovieController.prototype, "search", null);
 __decorate([
     common_1.Get('/:id'),
+    openapi.ApiResponse({ status: 200, type: require("./entities/movie.entities").Movie }),
     __param(0, common_1.Param(`id`)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
@@ -74,6 +78,12 @@ __decorate([
 ], MovieController.prototype, "getOne", null);
 __decorate([
     common_1.Post(),
+    swagger_1.ApiCreatedResponse({
+        description: 'The record has been successfully created.'
+    }),
+    swagger_1.ApiBody({ type: create_movie_dto_1.CreateMovieDto, required: true }),
+    swagger_1.ApiResponse({ status: 201, description: `success!` }),
+    openapi.ApiResponse({ status: 201 }),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_movie_dto_1.CreateMovieDto]),
@@ -81,6 +91,7 @@ __decorate([
 ], MovieController.prototype, "create", null);
 __decorate([
     common_1.Delete('/:id'),
+    openapi.ApiResponse({ status: 200 }),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
@@ -88,6 +99,7 @@ __decorate([
 ], MovieController.prototype, "remove", null);
 __decorate([
     common_1.Patch('/:id'),
+    openapi.ApiResponse({ status: 200 }),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, update_movie_dto_1.UpdateMovieDto]),
@@ -95,6 +107,7 @@ __decorate([
 ], MovieController.prototype, "path", null);
 MovieController = __decorate([
     common_1.UseInterceptors(sentry_interceptor_1.SentryInterceptor),
+    swagger_1.ApiTags('영화'),
     common_1.Controller('movie'),
     __metadata("design:paramtypes", [movie_service_1.MovieService])
 ], MovieController);

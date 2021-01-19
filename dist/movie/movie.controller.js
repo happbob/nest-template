@@ -13,23 +13,26 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MovieController = void 0;
+const openapi = require("@nestjs/swagger");
 const common_1 = require("@nestjs/common");
 const create_movie_dto_1 = require("./dto/create-movie.dto");
 const update_movie_dto_1 = require("./dto/update-movie.dto");
-const movie_entitiy_1 = require("./entities/movie.entitiy");
+const movie_entities_1 = require("./entities/movie.entities");
 const movie_service_1 = require("./movie.service");
 const sentry_interceptor_1 = require("../config/sentry.interceptor");
+const swagger_1 = require("@nestjs/swagger");
 let MovieController = class MovieController {
     constructor(movieService) {
         this.movieService = movieService;
     }
-    getAll() {
-        let num;
+    getAll(res) {
+        if (this.movieService.getAll().length === 0)
+            return res.status(300).send({ code: 300, isSuccess: false, message: "200" });
         return this.movieService.getAll();
     }
     ;
     search(searchingYear) {
-        return `We are searching for a movie with a title : `;
+        return `We are searching for a movie with a title : ${+searchingYear} `;
     }
     getOne(id) {
         console.log(typeof id);
@@ -47,12 +50,19 @@ let MovieController = class MovieController {
 };
 __decorate([
     common_1.Get(),
+    openapi.ApiResponse({ status: 200, type: [require("./entities/movie.entities").Movie] }),
+    __param(0, common_1.Res()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Array)
 ], MovieController.prototype, "getAll", null);
 __decorate([
     common_1.Get(`search`),
+    swagger_1.ApiOperation({ summary: '영화 찾기 API' }),
+    swagger_1.ApiResponse({ status: 201, description: `success!` }),
+    swagger_1.ApiOkResponse({ description: 'movie was successfully located' }),
+    swagger_1.ApiNotFoundResponse({ description: 'A movie of the requested ID could not be found' }),
+    openapi.ApiResponse({ status: 200, type: String }),
     __param(0, common_1.Query("year")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
@@ -60,13 +70,15 @@ __decorate([
 ], MovieController.prototype, "search", null);
 __decorate([
     common_1.Get('/:id'),
+    openapi.ApiResponse({ status: 200, type: require("./entities/movie.entities").Movie }),
     __param(0, common_1.Param(`id`)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", movie_entitiy_1.Movie)
+    __metadata("design:returntype", movie_entities_1.Movie)
 ], MovieController.prototype, "getOne", null);
 __decorate([
     common_1.Post(),
+    openapi.ApiResponse({ status: 201 }),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_movie_dto_1.CreateMovieDto]),
@@ -74,6 +86,7 @@ __decorate([
 ], MovieController.prototype, "create", null);
 __decorate([
     common_1.Delete('/:id'),
+    openapi.ApiResponse({ status: 200 }),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
@@ -81,6 +94,7 @@ __decorate([
 ], MovieController.prototype, "remove", null);
 __decorate([
     common_1.Patch('/:id'),
+    openapi.ApiResponse({ status: 200 }),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, update_movie_dto_1.UpdateMovieDto]),

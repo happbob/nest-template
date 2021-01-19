@@ -10,23 +10,15 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const movie_module_1 = require("./movie/movie.module");
 const app_controller_1 = require("./app.controller");
-const nest_raven_1 = require("nest-raven");
-const core_1 = require("@nestjs/core");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
-            movie_module_1.MovieModule,
-            nest_raven_1.RavenModule
+            movie_module_1.MovieModule
         ],
         controllers: [app_controller_1.AppController],
-        providers: [
-            {
-                provide: core_1.APP_INTERCEPTOR,
-                useValue: new nest_raven_1.RavenInterceptor()
-            }
-        ],
+        providers: [],
     })
 ], AppModule);
 exports.AppModule = AppModule;

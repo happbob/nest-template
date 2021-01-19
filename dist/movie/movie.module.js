@@ -10,19 +10,12 @@ exports.MovieModule = void 0;
 const common_1 = require("@nestjs/common");
 const movie_controller_1 = require("./movie.controller");
 const movie_service_1 = require("./movie.service");
-const nest_raven_1 = require("nest-raven");
-const core_1 = require("@nestjs/core");
 let MovieModule = class MovieModule {
 };
 MovieModule = __decorate([
     common_1.Module({
         controllers: [movie_controller_1.MovieController],
-        providers: [movie_service_1.MovieService,
-            {
-                provide: core_1.APP_INTERCEPTOR,
-                useValue: new nest_raven_1.RavenInterceptor()
-            }
-        ]
+        providers: [movie_service_1.MovieService,]
     })
 ], MovieModule);
 exports.MovieModule = MovieModule;

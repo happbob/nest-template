@@ -1,5 +1,4 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Movie } from './entities/movie.entitiy';
 import { MovieController } from './movie.controller';
 import { MovieService } from './movie.service';
 
