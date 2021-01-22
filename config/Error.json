@@ -1,6 +1,8 @@
-const notFound = {
-    code:200
-}    
-module.exports={
-    notFound
-}
+
+{
+    "notFound" :  {
+        "code":404,
+        "isSuccess":true,
+        "message":"not Found!"
+    }
+  }
