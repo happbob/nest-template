@@ -1,9 +1,7 @@
-import { Movie } from './entities/movie.entities';
+import { Repository } from 'typeorm';
+import { Movie } from './../entities/movie.entity';
 export declare class MovieService {
-    private movies;
-    getAll(): Movie[];
-    getOne(id: number): Movie;
-    deleteOne(id: number): void;
-    create(movieData: any): void;
-    update(id: number, updateData: any): void;
+    private moviesRepository;
+    constructor(moviesRepository: Repository<Movie>);
+    getAll(): Promise<Movie[]>;
 }

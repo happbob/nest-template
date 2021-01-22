@@ -1,14 +1,8 @@
-import { CreateMovieDto } from './dto/create-movie.dto';
-import { UpdateMovieDto } from './dto/update-movie.dto';
-import { Movie } from './entities/movie.entities';
 import { MovieService } from './movie.service';
+import { Movie } from './../entities/movie.entity';
 export declare class MovieController {
     private readonly movieService;
     constructor(movieService: MovieService);
-    getAll(res: any): Movie[];
+    getAll(res: any): Promise<Movie[]>;
     search(searchingYear: string): string;
-    getOne(id: number): Movie;
-    create(movieData: CreateMovieDto): void;
-    remove(movieId: number): void;
-    path(movieId: number, updateData: UpdateMovieDto): void;
 }

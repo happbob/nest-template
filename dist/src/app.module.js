@@ -10,12 +10,24 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const movie_module_1 = require("./movie/movie.module");
 const app_controller_1 = require("./app.controller");
+const typeorm_1 = require("@nestjs/typeorm");
+const user_entity_1 = require("./entities/user.entity");
+const movie_entity_1 = require("./entities/movie.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
-            movie_module_1.MovieModule
+            typeorm_1.TypeOrmModule.forRoot({
+                type: 'mysql',
+                host: 'localhost',
+                port: 3306,
+                username: 'limms2000',
+                password: 'sky01015**',
+                database: 'test',
+                entities: [user_entity_1.User, movie_entity_1.Movie],
+                synchronize: true,
+            }), movie_module_1.MovieModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [],
