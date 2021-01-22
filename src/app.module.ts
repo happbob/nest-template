@@ -15,7 +15,7 @@ import { Genres } from './entities/genres.entity';
       username: 'limms2000',
       password: 'sky01015**',
       database: 'test',
-      entities: [User,Movie],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),MovieModule],
   controllers: [AppController],

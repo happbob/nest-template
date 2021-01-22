@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { Injectable, NotFoundException, Inject } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Connection, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import {Movie} from './../entities/movie.entity'
 import * as Error from './../../config/Error.json';
@@ -8,14 +8,16 @@ import * as Error from './../../config/Error.json';
 export class MovieService {
     constructor(
         @InjectRepository(Movie)
-        private moviesRepository: Repository<Movie>
+        private readonly moviesRepository: Repository<Movie>
     ){};
     //database 로직 짜는 곳
 
     async getAll():Promise<Movie[]>{
-        console.log(1);
         try{
-            return await this.moviesRepository.find();
+            const result = await this.moviesRepository.find();
+            return new Promise((resolve)=>{
+                resolve(result);
+            });
         }catch(err){
             throw err;
             

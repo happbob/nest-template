@@ -4071,18 +4071,23 @@
         "signature": "3f7c772e3c892dd6aa39f1b7ae15baef11f89cbb0863c019eb89caa39ed87cf4",
         "affectsGlobalScope": false
       },
+      "../config/error.json": {
+        "version": "365fc7cca4c94dc85a99d92c93f3aaf6e840229ee08a5065ce23b99a6ab702d8",
+        "signature": "b3fe589b9420391601016a88625daa6938493ba7153676ab85a7d98f8d32e644",
+        "affectsGlobalScope": true
+      },
       "../src/movie/movie.service.ts": {
-        "version": "49144a2c10e673c2bb60555739457032a038ef03c1174b564014e97b76d09db1",
-        "signature": "70e423b6f94fd1ff57141f8bacaf8d66a1312862f9cc7cacc688a3a982019f61",
+        "version": "ab9ca2e331719597bc74a3e1d94749ead9f8751bc005c9e47d2ce26435d4d9aa",
+        "signature": "cac5f561d1a34a2adc6bacaaacb7df086b82524027a9daf90b489eff58e7b2cd",
         "affectsGlobalScope": false
       },
       "../src/movie/movie.controller.ts": {
-        "version": "d1f7fac898642f543a4af05833f6b78ce830fc4997a8d7d2c4a9443655db5c8e",
-        "signature": "bfbc9eda5442cf89216725b4b7b6416697263dbc4eaf1840eca5009cf4f96d49",
+        "version": "1ea15236127330967f0e46606d5dc81a4df615c4fe42266d7ecc90cc029e6436",
+        "signature": "912810efd50d5f34b3634386407d3124f7d92466114d01c9eee4676b3ab30aca",
         "affectsGlobalScope": false
       },
       "../src/movie/movie.module.ts": {
-        "version": "be2257103f370cd063f7e87417b30d8e8a024f1d674adb408e887fb115b044fd",
+        "version": "e660a52dd283c9c6995583819457c9c3fceb2d39a6c30ce20689ed8d9a982603",
         "signature": "86b1fe5763deb3a6448df8d93bfb099d928e23c49fa95b35690d4a103c5fef1b",
         "affectsGlobalScope": false
       },
@@ -4097,7 +4102,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "96a5f51f9c6c6eca49a2e1abbc28109e0a57329d4cf48594b9bc2d2347958609",
+        "version": "bfe16216ddc79c70e06b0a7e246476d724088d3e54a6bdd3856b61cb5fb5466a",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -4754,11 +4759,6 @@
       "../src/main.ts": {
         "version": "3280d5bf52614d1a9dea55ba4baf96fafec8a3a477ade471b43ebe85ea48d4f6",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
-      "../src/movie/entities/movie.entities.ts": {
-        "version": "b9a59e2cae1a1126f99d0a59319d041445cfbcaaa4d5294d57a91cb9fc2804a9",
-        "signature": "dbfbec719e8efb72c66465606b82a661350572e7a75c3fc65386e804d1f57536",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/accepts/index.d.ts": {
@@ -5669,10 +5669,13 @@
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "allowSyntheticDefaultImports": true,
+      "moduleResolution": 2,
       "target": 4,
       "sourceMap": true,
       "outDir": "./",
       "baseUrl": "..",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
       "incremental": true,
       "configFilePath": "../tsconfig.build.json"
     },
@@ -10059,19 +10062,17 @@
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/movie/dto/create-movie.dto.ts"
       ],
-      "../src/movie/entities/movie.entities.ts": [
-        "../node_modules/@nestjs/swagger/index.d.ts"
-      ],
       "../src/movie/movie.controller.ts": [
+        "../config/error.json",
         "../config/sentry.interceptor.ts",
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
+        "../node_modules/@types/node/path.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/entities/movie.entity.ts",
         "../src/movie/dto/create-movie.dto.ts",
         "../src/movie/dto/update-movie.dto.ts",
-        "../src/movie/movie.service.ts",
-        "../typing.d.ts"
+        "../src/movie/movie.service.ts"
       ],
       "../src/movie/movie.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -10081,11 +10082,11 @@
         "../src/movie/movie.service.ts"
       ],
       "../src/movie/movie.service.ts": [
+        "../config/error.json",
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
-        "../src/entities/movie.entity.ts",
-        "../typing.d.ts"
+        "../src/entities/movie.entity.ts"
       ]
     },
     "exportedModulesMap": {
@@ -14436,14 +14437,15 @@
         "../src/movie/dto/create-movie.dto.ts"
       ],
       "../src/movie/movie.controller.ts": [
-        "../src/entities/movie.entity.ts",
         "../src/movie/movie.service.ts"
       ],
       "../src/movie/movie.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
         "../src/entities/movie.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
+      "../config/error.json",
       "../config/sentry.interceptor.ts",
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
@@ -15571,7 +15573,6 @@
       "../src/main.ts",
       "../src/movie/dto/create-movie.dto.ts",
       "../src/movie/dto/update-movie.dto.ts",
-      "../src/movie/entities/movie.entities.ts",
       "../src/movie/movie.controller.ts",
       "../src/movie/movie.module.ts",
       "../src/movie/movie.service.ts",

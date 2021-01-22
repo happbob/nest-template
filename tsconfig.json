@@ -6,10 +6,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "incremental": true
   }
 }

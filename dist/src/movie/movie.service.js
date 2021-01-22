@@ -23,9 +23,11 @@ let MovieService = class MovieService {
     }
     ;
     async getAll() {
-        console.log(1);
         try {
-            return await this.moviesRepository.find();
+            const result = await this.moviesRepository.find();
+            return new Promise((resolve) => {
+                resolve(result);
+            });
         }
         catch (err) {
             throw err;

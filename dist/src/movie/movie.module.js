@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MovieModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const movie_entity_1 = require("../entities/movie.entity");
+const movie_entity_1 = require("./../entities/movie.entity");
 const movie_controller_1 = require("./movie.controller");
 const movie_service_1 = require("./movie.service");
 let MovieModule = class MovieModule {

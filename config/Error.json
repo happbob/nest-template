@@ -4,5 +4,10 @@
         "code":404,
         "isSuccess":true,
         "message":"not Found!"
+    },
+    "success":{
+        "code":200,
+        "isSuccess":true,
+        "message":"성공"
     }
   }

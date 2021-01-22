@@ -6,7 +6,8 @@ import { Repository } from 'typeorm';
 import { Movie } from './../entities/movie.entity';
 import { SentryInterceptor } from '../../config/sentry.interceptor';
 import { ApiOkResponse,ApiOAuth2, ApiOperation,ApiExtraModels, ApiNotFoundResponse,ApiExtension, ApiResponse, ApiCreatedResponse, ApiTags, ApiBasicAuth, ApiSecurity, ApiBody, ApiProperty, ApiHideProperty } from '@nestjs/swagger';
-import * as a from './../../config/Error.json';
+import * as Error from './../../config/Error.json';
+import { resolve } from 'path';
 @UseInterceptors(SentryInterceptor)
 // api 카테고리
 @ApiTags('영화')
@@ -20,10 +21,11 @@ export class MovieController {
     // @ApiBasicAuth()
     // @ApiSecurity('name')
     @Get()
-    async getAll(@Res() res):Promise<Movie[]>{
+    async getAll(@Res() res){
         const result = await this.movieService.getAll();
+        console.log(result);
         
-        return result;
+        return res.status(200).send({...Error["success"],...{result:result}});
     }
 
     @Get(`search`)

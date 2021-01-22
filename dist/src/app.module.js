@@ -11,8 +11,6 @@ const common_1 = require("@nestjs/common");
 const movie_module_1 = require("./movie/movie.module");
 const app_controller_1 = require("./app.controller");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("./entities/user.entity");
-const movie_entity_1 = require("./entities/movie.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -25,7 +23,7 @@ AppModule = __decorate([
                 username: 'limms2000',
                 password: 'sky01015**',
                 database: 'test',
-                entities: [user_entity_1.User, movie_entity_1.Movie],
+                entities: [__dirname + '/**/*.entity{.ts,.js}'],
                 synchronize: true,
             }), movie_module_1.MovieModule
         ],
