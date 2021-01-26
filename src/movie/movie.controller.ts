@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query,UseInterceptors,Res} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query,UseInterceptors,Res, Logger} from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import {MovieService} from './movie.service';
@@ -8,6 +8,7 @@ import { SentryInterceptor } from '../../config/sentry.interceptor';
 import { ApiOkResponse,ApiOAuth2, ApiOperation,ApiExtraModels, ApiNotFoundResponse,ApiExtension, ApiResponse, ApiCreatedResponse, ApiTags, ApiBasicAuth, ApiSecurity, ApiBody, ApiProperty, ApiHideProperty } from '@nestjs/swagger';
 import * as Error from './../../config/Error.json';
 import { resolve } from 'path';
+import { ResponseMessage } from 'config/response.util';
 @UseInterceptors(SentryInterceptor)
 // api 카테고리
 @ApiTags('영화')
@@ -21,11 +22,16 @@ export class MovieController {
     // @ApiBasicAuth()
     // @ApiSecurity('name')
     @Get()
-    async getAll(@Res() res){
-        const result = await this.movieService.getAll();
-        console.log(result);
-        
-        return res.status(200).send({...Error["success"],...{result:result}});
+    async getAll(){
+        try{
+            const result = await this.movieService.getAll();
+            console.log(result);
+            let a = new ResponseMessage().success("영화 리스트 조회 성공").body(result).build();
+            console.log(a);
+            return a;
+        }catch(err){
+            Logger.error(err);
+        }
     }
 
     @Get(`search`)

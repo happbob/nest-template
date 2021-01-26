@@ -15,14 +15,12 @@ export class MovieService {
     async getAll():Promise<Movie[]>{
         try{
             const result = await this.moviesRepository.find();
-            return new Promise((resolve)=>{
-                resolve(result);
-            });
+            return result;
         }catch(err){
-            throw err;
-            
+            return err;
         }
     }
+
 
     // getOne(id:number):Movie{
     //     console.log(typeof id);

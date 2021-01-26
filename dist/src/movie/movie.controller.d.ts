@@ -2,6 +2,6 @@ import { MovieService } from './movie.service';
 export declare class MovieController {
     private readonly movieService;
     constructor(movieService: MovieService);
-    getAll(res: any): Promise<any>;
+    getAll(): Promise<import("../../config/response.util").Response>;
     search(searchingYear: string): string;
 }
