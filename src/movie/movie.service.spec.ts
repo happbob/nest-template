@@ -1,13 +1,15 @@
 import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import { iif } from 'rxjs';
 import { MovieService } from './movie.service';
+import { Movie } from './../entities/movie.entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 describe('MovieService', () => {
   let service: MovieService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports:[TypeOrmModule.forFeature([Movie])],
       providers: [MovieService],
     }).compile();
 

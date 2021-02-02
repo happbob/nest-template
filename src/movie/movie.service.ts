@@ -3,7 +3,7 @@ import { Injectable, NotFoundException, Inject } from '@nestjs/common';
 import { Connection, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import {Movie} from './../entities/movie.entity'
-import * as Error from './../../config/Error.json';
+
 @Injectable()
 export class MovieService {
     constructor(

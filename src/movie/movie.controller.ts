@@ -4,11 +4,10 @@ import { UpdateMovieDto } from './dto/update-movie.dto';
 import {MovieService} from './movie.service';
 import { Repository } from 'typeorm';
 import { Movie } from './../entities/movie.entity';
-import { SentryInterceptor } from '../../config/sentry.interceptor';
+import { SentryInterceptor } from '../config/sentry.interceptor';
 import { ApiOkResponse,ApiOAuth2, ApiOperation,ApiExtraModels, ApiNotFoundResponse,ApiExtension, ApiResponse, ApiCreatedResponse, ApiTags, ApiBasicAuth, ApiSecurity, ApiBody, ApiProperty, ApiHideProperty } from '@nestjs/swagger';
-import * as Error from './../../config/Error.json';
-import { resolve } from 'path';
-import { ResponseMessage } from 'config/response.util';
+
+import { ResponseMessage } from '../config/response.util';
 @UseInterceptors(SentryInterceptor)
 // api 카테고리
 @ApiTags('영화')
