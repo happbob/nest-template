@@ -20,9 +20,10 @@ async function bootstrap() {
   }
   const document = SwaggerModule.createDocument(app, config, options);
   SwaggerModule.setup('swagger', app, document);
-  Sentry.init({
-    dsn:'https://edad56d57fd645b595e00168e6febca1@o504759.ingest.sentry.io/5592048',
-  });
+  // sentry 설정
+  // Sentry.init({
+  //   dsn:'https://edad56d57fd645b595e00168e6febca1@o504759.ingest.sentry.io/5592048',
+  // });
   app.useGlobalPipes(new ValidationPipe({
     whitelist:true,
     // 이상한거 방지
@@ -30,7 +31,7 @@ async function bootstrap() {
     // controller에서 우리가 원하는 실제 데이터 타입으로 변환
     transform:true
   }));
-  const port=3000;
+  const port=3030;
   await app.listen(port);
   console.log(`Application is running on : localhost:${port}`);
   

@@ -21,18 +21,18 @@ describe('MovieService', () => {
   // });
 
   // 유닛 테스트, 많은 옵션들, 함수들이 있으니 필요할때마다 검색해서 사용
-  it('should be defined', () => {
-    expect(service).toBeDefined();
-  });
+  // it('should be defined', () => {
+  //   expect(service).toBeDefined();
+  // });
 
   
-  describe("getAll",()=>{
-    it("should return an array",()=>{
-      const result = service.getAll();
+  // describe("getAll",()=>{
+  //   it("should return an array",()=>{
+  //     const result = service.getAll();
 
-      expect(result).toBeInstanceOf(Array);
-    });
-  });
+  //     expect(result).toBeInstanceOf(Array);
+  //   });
+  // });
 
   // describe('getOne',()=>{
   //   it("should return a movie",()=>{

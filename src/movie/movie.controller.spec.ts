@@ -17,7 +17,7 @@ describe('MovieController', () => {
     controller = module.get<MovieController>(MovieController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
+  // it('should be defined', () => {
+  //   expect(controller).toBeDefined();
+  // });
 });
